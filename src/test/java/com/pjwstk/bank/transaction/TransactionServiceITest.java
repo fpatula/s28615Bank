@@ -41,4 +41,16 @@ class TransactionServiceITest {
         clientRepository.purgeClients();
         assertEquals(38555.3, transaction.getBalance());
     }
+
+    @Test
+    void withdrawBalanceFailure() {
+        String clientID = "00001";
+        String clientName = "Andrzej";
+        String clientSurname = "Bialy";
+        double clientBalance = 34555.3;
+        clientService.registerClient(clientID, clientName, clientSurname, clientBalance);
+        Transaction transaction = transactionService.withdrawBalance(clientID, 38000);
+        clientRepository.purgeClients();
+        assertEquals(TransactionStatus.DECLINED, transaction.getStatus());
+    }
 }
