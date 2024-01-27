@@ -33,14 +33,9 @@ public class ClientService {
             return client.get();
         }
     }
-
     public Client getClientData(String clientID){
         Client foundClient = getClient(clientID);
         System.out.println(foundClient);
         return foundClient;
-    }
-
-    public boolean clientExists(String clientID){
-        return clientRepository.findClient(clientID).isPresent();
     }
 }

@@ -9,10 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class TransactionServiceTest {
 
-
-
     @Test
     void withdrawBalance() {
+
     }
 
     @Test

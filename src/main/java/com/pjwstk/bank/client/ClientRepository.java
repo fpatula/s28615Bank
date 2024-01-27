@@ -24,4 +24,7 @@ public class ClientRepository {
     public Collection<Client> getAllClients() {
         return clients;
     }
+    public void purgeClients(){
+        clients.clear();
+    }
 }
